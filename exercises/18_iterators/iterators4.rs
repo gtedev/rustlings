@@ -10,6 +10,10 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+    (1..=num)
+        .fold(1, |accumulator, element| { 
+            accumulator * element
+         })
 }
 
 fn main() {
@@ -22,6 +26,8 @@ mod tests {
 
     #[test]
     fn factorial_of_0() {
+
+        let result = factorial(0);
         assert_eq!(factorial(0), 1);
     }
 
